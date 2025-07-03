@@ -1,0 +1,21 @@
+{
+    "name" : "慢跑APP",
+    "short_name" : "RUN",
+    "start_url" : "./index.html",
+    "display" : "standalone",
+    "background_color" : "black",
+    "theme_color" : "white",
+    "icons":
+    [
+        {
+            "src": "run.jpg",
+            "sizes": "192x192",
+            "type" : "image/jpg"
+        },
+        {
+            "src" :"run2.png",
+            "sizes" : "512x512",
+            "type" : "image/png"
+        }
+    ]
+}

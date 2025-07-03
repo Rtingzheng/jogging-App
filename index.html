@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8"/>
+        <title>慢跑APP</title>
+        <meta name = "viewport" content = "width = device-width , initial-scale = 1.0"/>
+        <meta name = "theme-color" content ="#000000">
+        <!-- Leaflet 樣式 -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link rel = "manifest" href="manifest.json">
+
+        <style>
+            body
+            {
+                font-family:Arial;
+                text-align: center;
+                background: black;
+                color:aliceblue;
+            }
+            .display
+            {
+                font-size: 40px;
+                margin: 20px;
+            }
+            button
+            {
+                font-size: 20px;
+                padding: 10px 20px;
+                margin: 20px;
+                background-color: black;
+                color: cyan;
+                border-radius: 12px;
+                border: 2px solid white;
+                font-family: Arial;
+                text-shadow: 0 0 4px cyan;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            button:hover
+            {
+                background-color: white;
+                box-shadow: 0 0 8px cyan;
+            }
+
+            #map
+            {
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>慢跑APP</h1>
+        <div class = "display">里程: <span id = "dis">0.0</span>  公里</div>
+        <div class = "display">時間: <span id = "time">0</span>  分/秒</div>
+        <div id="map" style="height: 500px; width: 500px;  margin-top: 10px;"></div>
+
+        <button onclick = "start()">開始</button>
+        <button onclick = "pause()">暫停</button>
+        <button onclick = "reset()">重制</button>
+
+        <script src = "run.js"></script>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+        <script>
+            window.onload = function() 
+            {
+                initMap();
+            }
+</script>
+
+        <script>
+            if('serviceWorker' in navigator){
+                navigator.serviceWorker.register('service-Worker.js')
+                .then(() => console.log('service Worker 註冊成功'))
+                .catch(err => console.error('service Worker 註冊失敗', err));
+            }
+        </script>
+
+    </body>
+</html>
