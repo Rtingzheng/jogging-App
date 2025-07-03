@@ -2,7 +2,7 @@ let timer,time=0,dis=0,saveTime=0;
 let running = false;
 let watchID , startTime;
 let prevLat = null , prevLon = null;
-let nextDistanceStop = 0.1;
+let nextDistanceStop = 0.01;
 let map, routeLine;
 let routeCoords = [];
 
@@ -39,7 +39,7 @@ if(navigator.geolocation)
                         dis +=d;
                         if(dis >= nextDistanceStop)
                         {
-                            nextDistanceStop +=0.1;
+                            nextDistanceStop +=0.01;
                             routeCoords.push([latitude ,longitude]);
                         }
                         updateMap(latitude, longitude);
